@@ -14,6 +14,9 @@ namespace XEngine
 
 
 
+	private:
+		LinearAllocator(const LinearAllocator& obj);
+
 
 	};
 

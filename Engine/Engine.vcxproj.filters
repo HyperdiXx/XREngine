@@ -1,0 +1,251 @@
+﻿-﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="core">
+      <UniqueIdentifier>{8d4f306f-86a6-476e-851e-3fc425d84da3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\Render">
+      <UniqueIdentifier>{33f1ef7d-3da5-4bc0-8fa0-737e100d55fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="scene">
+      <UniqueIdentifier>{4f5e2014-84f3-4fb6-9647-0fd1fe171842}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{0210d017-6f48-4052-9ace-0e22b486cc00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\System">
+      <UniqueIdentifier>{f81aa605-e2c4-464c-8361-e57a53b85e52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\Allocators">
+      <UniqueIdentifier>{a34c17aa-8f5d-4904-b6d5-d6650c36025a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\Libs">
+      <UniqueIdentifier>{8db9bedc-fef4-4e2f-a45b-60a1616c7a2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\GameTImer">
+      <UniqueIdentifier>{5a15a6e0-6d53-42ea-9b84-f8ff0c7c1e1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\Stat">
+      <UniqueIdentifier>{7af61fad-58fe-4052-be90-a559d80b6aef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\Input">
+      <UniqueIdentifier>{8550d902-576d-4295-a8a1-483dbb936423}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\Managers">
+      <UniqueIdentifier>{0e190c76-7d0e-4bd6-a6e2-addb7b17d98e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\ShaderSetup">
+      <UniqueIdentifier>{364f4645-ea7a-4c4b-a2fc-a31b6f6e6441}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\SetScene">
+      <UniqueIdentifier>{24e54716-dd90-436c-afd6-7bef1a8e98a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\Textures">
+      <UniqueIdentifier>{1715ddb9-0094-4475-940f-cf2f9cbf15da}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="d3dclass.cpp">
+      <Filter>core\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowSetup.cpp">
+      <Filter>core\System</Filter>
+    </ClCompile>
+    <ClCompile Include="AppAbst.cpp">
+      <Filter>core\System</Filter>
+    </ClCompile>
+    <ClCompile Include="SetupCom.cpp">
+      <Filter>core\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Allocactor.cpp">
+      <Filter>core\Allocators</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>core\GameTImer</Filter>
+    </ClCompile>
+    <ClCompile Include="FPS.cpp">
+      <Filter>core\Stat</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>core\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.cpp">
+      <Filter>core\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorShader.cpp">
+      <Filter>core\ShaderSetup</Filter>
+    </ClCompile>
+    <ClCompile Include="TextShader.cpp">
+      <Filter>core\ShaderSetup</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>core\SetScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>core\System</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI.cpp">
+      <Filter>core\SetScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>core\SetScene</Filter>
+    </ClCompile>
+    <ClCompile Include="TextComp.cpp">
+      <Filter>core\SetScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>core\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>core\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain.cpp">
+      <Filter>scene</Filter>
+    </ClCompile>
+    <ClCompile Include="LinearAllocator.cpp">
+      <Filter>core\Allocators</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="d3dclass.h">
+      <Filter>core\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="SetupCom.h">
+      <Filter>core\System</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowSetup.h">
+      <Filter>core\System</Filter>
+    </ClInclude>
+    <ClInclude Include="AppAbst.h">
+      <Filter>core\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Allocator.h">
+      <Filter>core\Allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="Setup.h">
+      <Filter>core\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>core\GameTImer</Filter>
+    </ClInclude>
+    <ClInclude Include="FPS.h">
+      <Filter>core\Stat</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>core\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderManager.h">
+      <Filter>core\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorShader.h">
+      <Filter>core\ShaderSetup</Filter>
+    </ClInclude>
+    <ClInclude Include="TextShader.h">
+      <Filter>core\ShaderSetup</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>core\SetScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>core\System</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI.h">
+      <Filter>core\SetScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>core\SetScene</Filter>
+    </ClInclude>
+    <ClInclude Include="TextComp.h">
+      <Filter>core\SetScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>core\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>core\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Terrain.h">
+      <Filter>scene</Filter>
+    </ClInclude>
+    <ClInclude Include="LinearAllocator.h">
+      <Filter>core\Allocators</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="color.ps">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="color.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="font.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="font.ps">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="light.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="light.ps">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="skydome.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="skydome.ps">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="terrain.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="terrain.ps">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="texture.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="texture.ps">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="fog.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="fog.ps">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="particle.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="particle.ps">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="pointlight.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="pointlight.ps">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Transparenthdepth.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Transparenthdepth.ps">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Color.hlsl">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Terrain.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>

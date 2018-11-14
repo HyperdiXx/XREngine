@@ -6,7 +6,7 @@
 
 
 #include <windows.h>
-#include "Setup.h"
+#include "core\pch\TypesSetup.h"
 
 class WindowSetup
 {

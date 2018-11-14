@@ -36,7 +36,7 @@ void WindowSetup::InitWindow(HINSTANCE hinst, HWND hwnd, int32& W, int32& H)
 	wc.hCursor = LoadCursor(NULL, IDC_ARROW);
 	wc.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
 	wc.lpszMenuName = NULL;
-	wc.lpszClassName = L"Engine";
+	//wc.lpszClassName "Engine";
 	wc.cbSize = sizeof(WNDCLASSEX);
 
 	RegisterClassEx(&wc);
@@ -66,8 +66,8 @@ void WindowSetup::InitWindow(HINSTANCE hinst, HWND hwnd, int32& W, int32& H)
 		posY = (GetSystemMetrics(SM_CYSCREEN) - H) / 2;
 	}
 
-	hwnd = CreateWindowEx(WS_EX_APPWINDOW, L"Engine", L"Engine", WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_POPUP,
-		posX, posY, W, H, NULL, NULL, hinst, NULL);
+/*	hwnd = CreateWindowEx(WS_EX_APPWINDOW, L"Engine", L"Engine", WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_POPUP,
+		posX, posY, W, H, NULL, NULL, hinst, NULL);*/
 
 	ShowWindow(hwnd, SW_SHOW);
 	SetForegroundWindow(hwnd);
@@ -93,7 +93,7 @@ void WindowSetup::Release()
 	DestroyWindow(GetHwnd());
 	GetHwnd() = NULL;
 
-	UnregisterClass(L"Engine", GetHINSTANCE());
+	UnregisterClass("Engine", GetHINSTANCE());
 	GetHINSTANCE() = NULL;
 
 	App = NULL;

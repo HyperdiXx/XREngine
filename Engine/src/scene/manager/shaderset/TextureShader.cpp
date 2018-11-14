@@ -36,7 +36,7 @@ XEngine::TextureShader::Release()
 }
 
 bool 
-XEngine::TextureShader::InitShader(ID3D11Device *device, HWND hWnd, WCHAR *hlsl1, WCHAR *hlsl2)
+XEngine::TextureShader::InitShader(ID3D11Device *device, HWND hWnd, LPCWSTR hlsl1, LPCWSTR hlsl2)
 {
 	D3D11_INPUT_ELEMENT_DESC polygonLayout[2];
 	ID3D10Blob* vertexBuff;

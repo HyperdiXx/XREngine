@@ -34,7 +34,7 @@ struct XENGINE_API TextShader
 	bool Render(ID3D11DeviceContext*, int, XMMATRIX&, XMMATRIX&, XMMATRIX&, ID3D11ShaderResourceView*, XMFLOAT4);
 	void Release();
 	
-	bool InitShader(ID3D11Device*, HWND, WCHAR*, WCHAR*);
+	bool InitShader(ID3D11Device*, HWND, LPCWSTR, LPCWSTR);
 	bool ShaderPass(ID3D11DeviceContext*, XMMATRIX&, XMMATRIX&, XMMATRIX&, ID3D11ShaderResourceView*, XMFLOAT4);
 	void RenderShader(ID3D11DeviceContext*, int);
 	void ReleaseShader();

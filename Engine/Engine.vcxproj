@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{6BD3D0F6-297E-45B9-87CD-505CEA647C7A}</ProjectGuid>
+    <RootNamespace>Engine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)binint\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)binint\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>X_PLATFORM_WINDOWS;X_BUILD_DLL;_WINDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>X_PLATFORM_WINDOWS;X_BUILD_DLL;_WINDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Core.h" />
+    <ClInclude Include="src\core\Allocators\Allocator.h" />
+    <ClInclude Include="src\core\Allocators\LinearAllocator.h" />
+    <ClInclude Include="src\core\GraphicsDevice\d3dclass.h" />
+    <ClInclude Include="src\core\GUI\GUI.h" />
+    <ClInclude Include="src\core\Input\Input.h" />
+    <ClInclude Include="src\core\Math\Mat3.h" />
+    <ClInclude Include="src\core\Math\Mat4.h" />
+    <ClInclude Include="src\core\Math\PointerMath.h" />
+    <ClInclude Include="src\core\Math\Vec2.h" />
+    <ClInclude Include="src\core\Math\Vec3.h" />
+    <ClInclude Include="src\core\Math\Vec4.h" />
+    <ClInclude Include="src\core\pch\ch.h" />
+    <ClInclude Include="src\core\pch\TypesSetup.h" />
+    <ClInclude Include="src\core\SystemSetup\AppAbst.h" />
+    <ClInclude Include="src\core\SystemSetup\Camera.h" />
+    <ClInclude Include="src\core\SystemSetup\Controller.h" />
+    <ClInclude Include="src\core\SystemSetup\FPS.h" />
+    <ClInclude Include="src\core\SystemSetup\SetupCom.h" />
+    <ClInclude Include="src\core\SystemSetup\TextComp.h" />
+    <ClInclude Include="src\core\SystemSetup\Timer.h" />
+    <ClInclude Include="src\scene\Lighting.h" />
+    <ClInclude Include="src\scene\manager\ShaderManager.h" />
+    <ClInclude Include="src\scene\manager\shaderset\ColorShader.h" />
+    <ClInclude Include="src\scene\manager\shaderset\TerrainShader.h" />
+    <ClInclude Include="src\scene\manager\shaderset\TextShader.h" />
+    <ClInclude Include="src\scene\manager\shaderset\TextureShader.h" />
+    <ClInclude Include="src\scene\manager\TextureManager.h" />
+    <ClInclude Include="src\scene\objects\Text.h" />
+    <ClInclude Include="src\scene\objects\Texture.h" />
+    <ClInclude Include="src\scene\Scene.h" />
+    <ClInclude Include="src\scene\Terrain.h" />
+    <ClInclude Include="src\WindowSetup.h" />
+    <ClInclude Include="src\XEngine.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\core\Allocators\Allocactor.cpp" />
+    <ClCompile Include="src\core\Allocators\LinearAllocator.cpp" />
+    <ClCompile Include="src\core\GraphicsDevice\d3dclass.cpp" />
+    <ClCompile Include="src\core\GUI\GUI.cpp" />
+    <ClCompile Include="src\core\Input\Input.cpp" />
+    <ClCompile Include="src\core\Math\Vec2.cpp" />
+    <ClCompile Include="src\core\Math\Vec3.cpp" />
+    <ClCompile Include="src\core\Math\Vec4.cpp" />
+    <ClCompile Include="src\core\SystemSetup\AppAbst.cpp" />
+    <ClCompile Include="src\core\SystemSetup\Camera.cpp" />
+    <ClCompile Include="src\core\SystemSetup\Controller.cpp" />
+    <ClCompile Include="src\core\SystemSetup\FPS.cpp" />
+    <ClCompile Include="src\core\SystemSetup\SetupCom.cpp" />
+    <ClCompile Include="src\core\SystemSetup\TextComp.cpp" />
+    <ClCompile Include="src\core\SystemSetup\Timer.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\scene\Lighting.cpp" />
+    <ClCompile Include="src\scene\manager\ShaderManager.cpp" />
+    <ClCompile Include="src\scene\manager\shaderset\ColorShader.cpp" />
+    <ClCompile Include="src\scene\manager\shaderset\TerrainShader.cpp" />
+    <ClCompile Include="src\scene\manager\shaderset\TextShader.cpp" />
+    <ClCompile Include="src\scene\manager\shaderset\TextureShader.cpp" />
+    <ClCompile Include="src\scene\manager\TextureManager.cpp" />
+    <ClCompile Include="src\scene\objects\Text.cpp" />
+    <ClCompile Include="src\scene\objects\Texture.cpp" />
+    <ClCompile Include="src\scene\Scene.cpp" />
+    <ClCompile Include="src\scene\Terrain.cpp" />
+    <ClCompile Include="src\WindowSetup.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

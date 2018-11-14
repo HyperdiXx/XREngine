@@ -14,7 +14,7 @@ XEngine::Terrain::~Terrain()
 
 }
 
-bool XEngine::Terrain::Init(ID3D11Device *device, char *setupFilename)
+bool XEngine::Terrain::Init(ID3D11Device *device, const char *setupFilename)
 {
 	
 
@@ -221,7 +221,7 @@ bool XEngine::Terrain::CalculateNormals()
 	return true;
 }
 
-bool XEngine::Terrain::LoadSetupFile(char *name)
+bool XEngine::Terrain::LoadSetupFile(const char *name)
 {
 	int stringLength = 256;
 	char inp;
@@ -273,7 +273,7 @@ bool XEngine::Terrain::LoadSetupFile(char *name)
 
 bool XEngine::Terrain::LoadBitmapHeight()
 {
-	FILE* ptr;
+	FILE* ptr = nullptr;
 	unsigned long long count;
 	BITMAPFILEHEADER bitmapFileHeader;
 	BITMAPINFOHEADER bitmapInfoHeader;
@@ -361,7 +361,7 @@ bool XEngine::Terrain::LoadBitmapHeight()
 	return true;
 }
 
-bool XEngine::Terrain::LoadHeightMap(char *filename)
+bool XEngine::Terrain::LoadHeightMap(const char *filename)
 {
 	FILE* filePtr;
 	int error;

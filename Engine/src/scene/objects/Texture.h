@@ -24,12 +24,12 @@ namespace XEngine
 		Texture();
 		~Texture();
 
-		bool Init(ID3D11Device*, ID3D11DeviceContext*, char*);
+		bool Init(ID3D11Device*, ID3D11DeviceContext*, const char*);
 		void Release();
 
 		ID3D11ShaderResourceView* GetTexture();
 
-		bool LoadTarga(char*, int&, int&);
+		bool LoadTarga(const char*, int&, int&);
 
 		ID3D11Texture2D* mTexture;
 		ID3D11ShaderResourceView* mShaderView;

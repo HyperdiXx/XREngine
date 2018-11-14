@@ -10,7 +10,7 @@ Text::~Text()
 }
 
 bool Text::Init(ID3D11Device *device, ID3D11DeviceContext *deviceContext, 
-	int32 W, int32 H, int32 maxL, bool shadow, TextComponent *textComp, char *text, int32 positionX, int32 positionY,
+	int32 W, int32 H, int32 maxL, bool shadow, TextComponent *textComp, const char *text, int32 positionX, int32 positionY,
 	real32 r, real32 g, real32 b)
 {
 
@@ -49,7 +49,7 @@ void Text::Render(ID3D11DeviceContext *deviceContext, ShaderManager *shaderManag
 }
 
 
-bool Text::InitializeSentence(ID3D11Device *device, ID3D11DeviceContext *deviceContext, TextComponent *textComp, char *text, int32 posX, int32 posY, real32 r, real32 g, real32 b)
+bool Text::InitializeSentence(ID3D11Device *device, ID3D11DeviceContext *deviceContext, TextComponent *textComp, const char *text, int32 posX, int32 posY, real32 r, real32 g, real32 b)
 {
 	Vertex *sent;
 	unsigned long *index;
@@ -139,7 +139,7 @@ bool Text::InitializeSentence(ID3D11Device *device, ID3D11DeviceContext *deviceC
 	return true;
 }
 
-bool Text::UpdateSentence(ID3D11DeviceContext *deviceContext, TextComponent *textComp, char *text, int32 posX, int32 posY, float r, float g, float b)
+bool Text::UpdateSentence(ID3D11DeviceContext *deviceContext, TextComponent *textComp, const char *text, int32 posX, int32 posY, float r, float g, float b)
 {
 	int nLetters = (int32)strlen(text);
 	Vertex *vertex;

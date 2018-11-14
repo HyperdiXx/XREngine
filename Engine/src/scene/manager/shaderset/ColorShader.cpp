@@ -13,7 +13,6 @@ ColorShader::~ColorShader()
 bool ColorShader::Initialize(ID3D11Device * device, HWND hWnd)
 {
 	InitializeShader(device, hWnd, L"../Engine/colorVS.hlsl", L"../Engine/colorPS.hlsl");
-	
 
 	return true;
 }
@@ -33,7 +32,7 @@ bool ColorShader::Render(ID3D11DeviceContext* deviceContext, int32 index, XMMATR
 	return true;
 }
 
-bool ColorShader::InitializeShader(ID3D11Device* device, HWND hWnd, WCHAR * hlslShader1, WCHAR * hlslShader2)
+bool ColorShader::InitializeShader(ID3D11Device* device, HWND hWnd, LPCWSTR  hlslShader1, LPCWSTR  hlslShader2)
 {
 	HRESULT res;
 	ID3D10Blob* errorMessage = NULL;

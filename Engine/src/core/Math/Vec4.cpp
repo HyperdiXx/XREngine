@@ -97,7 +97,7 @@ void XEngine::Vector4::zero()
 Vector4 & XEngine::Vector4::operator=(const Vector4 & obj)
 {
 	Vector4 r;
-	return Vector4(r);
+	return (r);
 }
 
 float XEngine::Vector4::operator[](int i) const

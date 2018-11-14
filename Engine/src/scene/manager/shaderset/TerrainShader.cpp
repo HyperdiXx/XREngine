@@ -44,7 +44,7 @@ XEngine::TerrainShader::Release()
 }
 
 bool 
-XEngine::TerrainShader::InitShader(ID3D11Device *device, HWND hWnd, WCHAR * vertex, WCHAR *pixel)
+XEngine::TerrainShader::InitShader(ID3D11Device *device, HWND hWnd, LPCWSTR vertex, LPCWSTR pixel)
 {
 	HRESULT res;
 	ID3D10Blob* errorMessage;

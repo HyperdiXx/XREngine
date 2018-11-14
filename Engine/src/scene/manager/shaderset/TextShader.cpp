@@ -29,7 +29,7 @@ void TextShader::Release()
 	ReleaseShader();
 }
 
-bool TextShader::InitShader(ID3D11Device *device, HWND hWnd, WCHAR *vs, WCHAR *ps)
+bool TextShader::InitShader(ID3D11Device *device, HWND hWnd, LPCWSTR vs, LPCWSTR ps)
 {
 	HRESULT result;
 	ID3D10Blob* errorMessage;

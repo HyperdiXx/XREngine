@@ -31,7 +31,7 @@ namespace XEngine
 		bool Render(ID3D11DeviceContext*, int, XMMATRIX&, XMMATRIX&, XMMATRIX&, ID3D11ShaderResourceView*);
 		void Release();
 
-		bool InitShader(ID3D11Device*, HWND, WCHAR*, WCHAR*);
+		bool InitShader(ID3D11Device*, HWND, LPCWSTR, LPCWSTR);
 		
 		void ReleaseShader();
 		bool ShaderPass(ID3D11DeviceContext*, XMMATRIX&, XMMATRIX&, XMMATRIX&, ID3D11ShaderResourceView*);

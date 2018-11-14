@@ -30,17 +30,17 @@ struct XENGINE_API TextComponent
 	TextComponent();
 	~TextComponent();
 
-	bool Init(ID3D11Device*, ID3D11DeviceContext*, char*, char*, real32, int32);
+	bool Init(ID3D11Device*, ID3D11DeviceContext*, const char*, const char*, real32, int32);
 	void Release();
 
 	ID3D11ShaderResourceView* GetTexture();
-	void BuildVertexArray(void*, char*, real32, real32);
+	void BuildVertexArray(void*, const char*, real32, real32);
 	int32 GetSentencePixelLength(char*);
 	int32 GetFontHeight();
 
-	bool LoadFontData(char*);
+	bool LoadFontData(const char*);
 	void ReleaseFontData();
-	bool LoadTexture(ID3D11Device*, ID3D11DeviceContext*, char*);
+	bool LoadTexture(ID3D11Device*, ID3D11DeviceContext*, const char*);
 	void ReleaseTexture();
 
 	Font * mFont;

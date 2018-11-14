@@ -8,7 +8,7 @@ TextComponent::~TextComponent()
 {
 }
 
-bool TextComponent::Init(ID3D11Device *device, ID3D11DeviceContext *deviceContext, char *text, char *texture, real32 textHeight, int32 spaceSize)
+bool TextComponent::Init(ID3D11Device *device, ID3D11DeviceContext *deviceContext, const char *text, const char *texture, real32 textHeight, int32 spaceSize)
 {
 	mTextHeight = textHeight;
 	mSpaceSize = spaceSize;
@@ -37,7 +37,7 @@ ID3D11ShaderResourceView * TextComponent::GetTexture()
 	return mTexture->GetTexture();
 }
 
-void TextComponent::BuildVertexArray(void *vertex, char *words, real32 drawX, real32 drawY)
+void TextComponent::BuildVertexArray(void *vertex, const char *words, real32 drawX, real32 drawY)
 {
 	Vertex* v;
 	v = (Vertex*)vertex;
@@ -117,7 +117,7 @@ int32 TextComponent::GetFontHeight()
 	return (int32)mTextHeight;
 }
 
-bool TextComponent::LoadFontData(char *filename)
+bool TextComponent::LoadFontData(const char *filename)
 {
 	std::ifstream f;
 	mFont = new Font[95];
@@ -168,7 +168,7 @@ void TextComponent::ReleaseFontData()
 	}
 }
 
-bool TextComponent::LoadTexture(ID3D11Device *device, ID3D11DeviceContext *deviceContext, char *filename)
+bool TextComponent::LoadTexture(ID3D11Device *device, ID3D11DeviceContext *deviceContext, const char *filename)
 {
 	mTexture = new Texture;
 	if(!mTexture)

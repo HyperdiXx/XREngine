@@ -32,7 +32,7 @@ struct XENGINE_API ColorShader
 	void Shutdown();
 	bool Render(ID3D11DeviceContext*, int32, XMMATRIX&, XMMATRIX&, XMMATRIX&);
 
-	bool InitializeShader(ID3D11Device*, HWND, WCHAR*, WCHAR*);
+	bool InitializeShader(ID3D11Device*, HWND, LPCWSTR, LPCWSTR);
 	void ShutdownShader();
 	void OutputShaderErrorMessage(ID3D10Blob*, HWND, WCHAR*);
 

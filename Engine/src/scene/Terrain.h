@@ -39,16 +39,16 @@ namespace XEngine
 		Terrain();
 		~Terrain();
 
-		bool Init(ID3D11Device*, char*);
+		bool Init(ID3D11Device*, const char*);
 		bool Render(ID3D11DeviceContext*);
 		void Release();
 
 
 		void NormalizeHeightMap();
 		bool CalculateNormals();
-		bool LoadSetupFile(char*);
+		bool LoadSetupFile(const char*);
 		bool LoadBitmapHeight();
-		bool LoadHeightMap(char*);
+		bool LoadHeightMap(const char*);
 		void ReleaseHeightMap();
 		void SetTerrainCoordinates();
 		bool BuildTerrainModel();

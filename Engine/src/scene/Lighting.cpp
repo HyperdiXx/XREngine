@@ -23,17 +23,17 @@ void XEngine::Light::SetDiffuseColor(float r, float g, float b, float a)
 	DiffColor = XMFLOAT4(r, g, b, a);
 }
 
-XMFLOAT4 XEngine::Light::GetAmbientColor()
+XMFLOAT4 & XEngine::Light::GetAmbientColor()
 {
 	return AbientColor;
 }
 
-XMFLOAT4 XEngine::Light::GetDiffuseColor()
+XMFLOAT4 & XEngine::Light::GetDiffuseColor()
 {
 	return DiffColor;
 }
 
-XMFLOAT3 XEngine::Light::GetDirection()
+XMFLOAT3 & XEngine::Light::GetDirection()
 {
 	return Direction;
 }

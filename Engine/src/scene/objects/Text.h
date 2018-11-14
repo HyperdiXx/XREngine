@@ -20,14 +20,14 @@ struct Text
 	Text();
 	~Text();
 
-	bool Init(ID3D11Device*, ID3D11DeviceContext*, int32, int32, int32, bool, TextComponent*, char*, int32, int32, real32, real32, real32);
+	bool Init(ID3D11Device*, ID3D11DeviceContext*, int32, int32, int32, bool, TextComponent*, const char*, int32, int32, real32, real32, real32);
 	void Release();
 	void Render(ID3D11DeviceContext*, ShaderManager*, XMMATRIX&, XMMATRIX&, XMMATRIX&, ID3D11ShaderResourceView*);
 
-	bool UpdateSentence(ID3D11DeviceContext*, TextComponent*, char*, int32, int32, float, float, float);
+	bool UpdateSentence(ID3D11DeviceContext*, TextComponent*, const char*, int32, int32, float, float, float);
 
 
-	bool InitializeSentence(ID3D11Device*, ID3D11DeviceContext*, TextComponent*, char*, int32, int32, real32, real32, real32);
+	bool InitializeSentence(ID3D11Device*, ID3D11DeviceContext*, TextComponent*, const char*, int32, int32, real32, real32, real32);
 	void RenderSentence(ID3D11DeviceContext*, ShaderManager*, XMMATRIX&, XMMATRIX&, XMMATRIX&, ID3D11ShaderResourceView*);
 
 	ID3D11Buffer *mVertexBuffer, *mIndexBuffer, *mVertexBuffer2, *mIndexBuffer2;

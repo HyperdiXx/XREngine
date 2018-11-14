@@ -264,3 +264,7 @@ binint/Debug-Win32/Engine/Engine.tlog/CL.command.1.tlog
 *.tlog
 binint/Debug-Win32/Engine/vc141.idb
 binint/Debug-x64/TestXEngine/vc141.idb
+Engine/todo.txt
+Engine/todo.txt
+TestXEngine/Materials.txt
+binint/Debug-x64/Engine/vc141.idb

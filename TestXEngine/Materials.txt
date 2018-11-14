@@ -1,0 +1,7 @@
+						Memory Managment
+
+https://www.gamedev.net/articles/programming/general-and-gameplay-programming/c-custom-memory-allocation-r3010/
+http://www.swedishcoding.com/2008/08/31/are-we-out-of-memory/
+Jason Gregory Book, Memory Managment
+http://bitsquid.blogspot.com/2010/09/custom-memory-allocation-in-c.html
+https://blog.molecular-matters.com/2011/07/05/memory-system-part-1/ //

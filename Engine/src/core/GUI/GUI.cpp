@@ -8,7 +8,7 @@ GUI::~GUI()
 {
 }
 
-bool GUI::Init(D3DClass *render, int32 screenW, int32 screenH)
+bool GUI::Init(RendererComponent *render, int32 screenW, int32 screenH)
 {
 	char videocardinfo[128];
 	int32 Memory;
@@ -91,7 +91,7 @@ bool GUI::Init(D3DClass *render, int32 screenW, int32 screenH)
 	return true;
 }
 
-bool GUI::Render(D3DClass *render, ShaderManager *shadermanager, XMMATRIX &world, XMMATRIX &view, XMMATRIX &ortho)
+bool GUI::Render(RendererComponent *render, ShaderManager *shadermanager, XMMATRIX &world, XMMATRIX &view, XMMATRIX &ortho)
 {
 	render->TurnZBufferOff();
 	render->EnableAlphaBlending();

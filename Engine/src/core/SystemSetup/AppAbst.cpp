@@ -22,13 +22,13 @@ bool AppAbstraction::Init(HINSTANCE hInstance, HWND hWnd, int32 W, int32 H)
 		return false;
 	}
 
-	mRender = new D3DClass;
+	mRender = new RendererComponent;
 	if (!mRender)
 	{
 		return false;
 	}
 
-	if (!mRender->Initialize(W, H, VSYNC_ENABLED, hWnd, false, SCREEN_DEPTH, SCREEN_NEAR))
+	if (!mRender->Initialize(W, H, VSYNC_ENABLED, hWnd, false, FAR_PLANE, NEAR_PLANE))
 	{
 		return false;
 	}
@@ -80,7 +80,7 @@ bool AppAbstraction::Init(HINSTANCE hInstance, HWND hWnd, int32 W, int32 H)
 	}*/
 
 	mScene = new Scene;
-	if (!mScene->Initialize(mRender, hWnd, W, H, SCREEN_DEPTH))
+	if (!mScene->Initialize(mRender, hWnd, W, H, FAR_PLANE))
 	{
 		return false;
 	}

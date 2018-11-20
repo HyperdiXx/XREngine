@@ -13,8 +13,9 @@
 using namespace DirectX;
 using namespace XEngine;
 
-struct XENGINE_API TextComponent
+class XENGINE_API TextComponent
 {
+private:
 	struct Vertex
 	{
 		XMFLOAT3 pos;
@@ -26,7 +27,7 @@ struct XENGINE_API TextComponent
 		float right;
 		int size;
 	};
-
+public:
 	TextComponent();
 	~TextComponent();
 
@@ -42,7 +43,7 @@ struct XENGINE_API TextComponent
 	void ReleaseFontData();
 	bool LoadTexture(ID3D11Device*, ID3D11DeviceContext*, const char*);
 	void ReleaseTexture();
-
+private:
 	Font * mFont;
 	real32 mTextHeight;
 	int32 mSpaceSize;

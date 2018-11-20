@@ -10,8 +10,9 @@
 
 namespace XEngine
 {
-	struct XENGINE_API GameTimer
+	class XENGINE_API GameTimer
 	{
+	public:
 		GameTimer();
 		~GameTimer();
 
@@ -20,9 +21,11 @@ namespace XEngine
 		void Reset();
 		void Tick();
 
+
 		real32 GetRuntime();
 		real32 GetTime();
 
+	private:
 		real32 mFreq;
 		real32 mStartTime;
 		real32 mTickTime;

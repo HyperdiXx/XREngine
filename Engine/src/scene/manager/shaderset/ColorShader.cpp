@@ -1,6 +1,8 @@
 
 #include "ColorShader.h"
 
+using namespace XEngine;
+
 ColorShader::ColorShader()
 {
 	mMatrixBuffer = 0;

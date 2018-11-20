@@ -19,33 +19,35 @@
 #include "Lighting.h"
 #include "../Core.h"
 
-using namespace XEngine;
 
-class XENGINE_API Scene
+namespace XEngine
 {
-public:
-	Scene();
-	~Scene();
+	class XENGINE_API Scene
+	{
+	public:
+		Scene();
+		~Scene();
 
-	bool Initialize(D3DClass*, HWND, int32, int32, real32);
-	void Release();
-	bool Update(D3DClass*, Input*, ShaderManager*, TextureManager*, real32, int32);
-private:
+		bool Initialize(RendererComponent*, HWND, int32, int32, real32);
+		void Release();
+		bool Update(RendererComponent*, Input*, ShaderManager*, TextureManager*, real32, int32);
 
-	void HandleMovementInput(Input*, float);
-	bool Render(D3DClass*, ShaderManager*, TextureManager*);
+		void HandleMovementInput(Input*, float);
+		bool Render(RendererComponent*, ShaderManager*, TextureManager*);
 
-private:
-	//Scene(const Scene& obj) {};
+	private:
+		//Scene(const Scene& obj) {};
 
-	//Scene &operator=(const Scene& obj) { return 0; }
-private:
-	Camera * mCamera;
-	Controller* mController;
-	Terrain* mTerrain;
-	GUI* mGui;
-	Light* mLight;
-	bool IsGUI, IsWireframe;
-};
+		//Scene &operator=(const Scene& obj) { return 0; }
+	private:
+		Camera * mCamera;
+		Controller* mController;
+		Terrain* mTerrain;
+		GUI* mGui;
+		Light* mLight;
+		bool IsGUI, IsWireframe;
+	};
+}
+
 #endif // !_SCENE_H_
 

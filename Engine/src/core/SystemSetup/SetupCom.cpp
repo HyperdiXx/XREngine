@@ -2,18 +2,18 @@
 #include "SetupCom.h"
 #include <consoleapi.h>
 
-SetupCom::SetupCom()
+SetupComponent::SetupComponent()
 {
 	//mWindow = 0;
 	mApp = 0;
 }
 
-SetupCom::~SetupCom()
+SetupComponent::~SetupComponent()
 {
 
 }
 
-bool SetupCom::Init()
+bool SetupComponent::Init()
 {
 	int32 screenW = 0, screenH = 0;
 	
@@ -36,7 +36,7 @@ bool SetupCom::Init()
 	return true;
 }
 
-void SetupCom::Start()
+void SetupComponent::Start()
 {
 	MSG msg;
 	bool done, result;
@@ -69,7 +69,7 @@ void SetupCom::Start()
 
 }
 
-void SetupCom::Release()
+void SetupComponent::Release()
 {
 	//mWindow->Release();
 	ShowCursor(true);
@@ -95,7 +95,7 @@ void SetupCom::Release()
 
 }
 
-bool SetupCom::Update()
+bool SetupComponent::Update()
 {
 
 	if (!mApp->Update())
@@ -106,13 +106,13 @@ bool SetupCom::Update()
 	return true;
 }
 
-LRESULT CALLBACK SetupCom::MessageHandler(HWND hwnd, UINT umsg, WPARAM wparam, LPARAM lparam)
+LRESULT CALLBACK SetupComponent::MessageHandler(HWND hwnd, UINT umsg, WPARAM wparam, LPARAM lparam)
 {
 	return DefWindowProc(hwnd, umsg, wparam, lparam);
 }
 
 
-LRESULT CALLBACK WndProc(HWND hwnd, UINT umessage, WPARAM wparam, LPARAM lparam)
+LRESULT CALLBACK XEngine::WndProc(HWND hwnd, UINT umessage, WPARAM wparam, LPARAM lparam)
 {
 	switch (umessage)
 	{
@@ -138,7 +138,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT umessage, WPARAM wparam, LPARAM lparam)
 	}
 }
 
-bool SetupCom::InitWindow(int32 &w, int32 &h)
+bool SetupComponent::InitWindow(int32 &w, int32 &h)
 {
 	AppNew = this;
 
@@ -212,7 +212,7 @@ bool SetupCom::InitWindow(int32 &w, int32 &h)
 	
 }
 
-bool SetupCom::InitConsoleWindow()
+bool SetupComponent::InitConsoleWindow()
 {
 	AllocConsole();
 

@@ -16,8 +16,9 @@ using namespace DirectX;
 
 namespace XEngine
 {
-	struct XENGINE_API TerrainShader
+	class XENGINE_API TerrainShader
 	{
+	private:
 		struct Matrix
 		{
 			XMMATRIX world, view, proj;
@@ -30,7 +31,7 @@ namespace XEngine
 			XMFLOAT3 direction;
 			float padding;
 		};
-
+	public:
 		TerrainShader();
 		~TerrainShader();
 
@@ -44,7 +45,7 @@ namespace XEngine
 		void ReleaseShader();
 		bool ShaderPass(ID3D11DeviceContext*, XMMATRIX&, XMMATRIX&, XMMATRIX&, XMFLOAT4&, XMFLOAT4&, XMFLOAT3&);
 		void RenderShader(ID3D11DeviceContext*, int);
-
+	private:
 		ID3D11InputLayout* mInputLayout;
 		ID3D11VertexShader* mVertexShader;
 		ID3D11PixelShader* mPixelShader;

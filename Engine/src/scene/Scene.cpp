@@ -1,6 +1,8 @@
 
 #include "Scene.h"
 
+using namespace XEngine;
+
 Scene::Scene()
 {
 	//camera = 0;
@@ -11,7 +13,7 @@ Scene::~Scene()
 
 }
 
-bool Scene::Initialize(D3DClass *render, HWND hwnd, int32 w, int32 h, real32 depth)
+bool Scene::Initialize(RendererComponent *render, HWND hwnd, int32 w, int32 h, real32 depth)
 {
 	mCamera = new Camera;
 	if (!mCamera)
@@ -107,7 +109,7 @@ void Scene::Release()
 
 }
 
-bool Scene::Update(D3DClass *render, Input *input, ShaderManager *sh, TextureManager* tm, real32 frameTime, int32 fps)
+bool Scene::Update(RendererComponent* render, Input *input, ShaderManager *sh, TextureManager* tm, real32 frameTime, int32 fps)
 {
 	bool result;
 	float posX, posY, posZ, rotX, rotY, rotZ;
@@ -181,7 +183,7 @@ void Scene::HandleMovementInput(Input *Input, float frameTime)
 
 }
 
-bool Scene::Render(D3DClass *render, ShaderManager *shM, TextureManager* txM)
+bool Scene::Render(RendererComponent *render, ShaderManager *shM, TextureManager* txM)
 {
 	XMMATRIX worldMatrix, viewMatrix, projectionMatrix, baseviewMatrix, orthoMatrix;
 

@@ -1,6 +1,8 @@
 
 #include "Input.h"
 
+using namespace XEngine;
+
 Input::Input()
 {
 

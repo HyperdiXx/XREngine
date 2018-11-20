@@ -15,12 +15,14 @@
 #include "scene\Scene.h"
 #include "scene\Terrain.h"
 #include "scene\objects\Text.h"
+#include "scene\Lighting.h"
 #include "scene\manager\ShaderManager.h"
 #include "scene\manager\TextureManager.h"
 #include "scene\manager\shaderset\ColorShader.h"
 #include "scene\manager\shaderset\TerrainShader.h"
 #include "scene\manager\shaderset\TextShader.h"
 #include "scene\manager\shaderset\TextureShader.h"
-#include "scene\Lighting.h"
 
+
+////
 

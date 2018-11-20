@@ -11,53 +11,55 @@
 #include "shaderset/TerrainShader.h"
 #include "../../Core.h"
 
-using namespace XEngine;
-
-class XENGINE_API ShaderManager
+namespace XEngine
 {
-public:
-	ShaderManager() {}
-	~ShaderManager() {}
-
-	/*static void CreateInstance()
+	class XENGINE_API ShaderManager
 	{
+	public:
+		ShaderManager() {}
+		~ShaderManager() {}
+
+		/*static void CreateInstance()
+		{
 		if (mInstance == NULL)
 		{
-			mInstance = new ShaderManager;
+		mInstance = new ShaderManager;
 		}
-	}
+		}
 
-	static ShaderManager* GetObject()
-	{
-		return mInstance;
-	}
-
-	static void DestroyInstance()
-	{
-		if (mInstance) 
+		static ShaderManager* GetObject()
 		{
-			delete mInstance;
-			mInstance = NULL;
+		return mInstance;
 		}
-	}
-	*/
-	bool Init(ID3D11Device*, HWND);
-	void Release();
 
-	bool ColorShaderRender(ID3D11DeviceContext*, int32, XMMATRIX&, XMMATRIX&, XMMATRIX&);
-	bool FontShaderRender(ID3D11DeviceContext*, int32, XMMATRIX&, XMMATRIX&, XMMATRIX&, ID3D11ShaderResourceView*, XMFLOAT4&);
-	bool TextureShaderRender(ID3D11DeviceContext*, int32, XMMATRIX&, XMMATRIX&, XMMATRIX&, ID3D11ShaderResourceView*);
-	bool TerrainShaderRender(ID3D11DeviceContext*, int32, XMMATRIX&, XMMATRIX&, XMMATRIX&, XMFLOAT4&, XMFLOAT4&, XMFLOAT3&);
+		static void DestroyInstance()
+		{
+		if (mInstance)
+		{
+		delete mInstance;
+		mInstance = NULL;
+		}
+		}
+		*/
+		bool Init(ID3D11Device*, HWND);
+		void Release();
 
-protected:
-	//static ShaderManager* mInstance;
-private:
+		bool ColorShaderRender(ID3D11DeviceContext*, int32, XMMATRIX&, XMMATRIX&, XMMATRIX&);
+		bool FontShaderRender(ID3D11DeviceContext*, int32, XMMATRIX&, XMMATRIX&, XMMATRIX&, ID3D11ShaderResourceView*, XMFLOAT4&);
+		bool TextureShaderRender(ID3D11DeviceContext*, int32, XMMATRIX&, XMMATRIX&, XMMATRIX&, ID3D11ShaderResourceView*);
+		bool TerrainShaderRender(ID3D11DeviceContext*, int32, XMMATRIX&, XMMATRIX&, XMMATRIX&, XMFLOAT4&, XMFLOAT4&, XMFLOAT3&);
 
-	ColorShader * mColorShader;
-	TextShader* mTextShader;
-	TextureShader* mTextureShader;
-	TerrainShader* mTerrainShader;
+	protected:
+		//static ShaderManager* mInstance;
+	private:
 
-};
+		ColorShader * mColorShader;
+		TextShader* mTextShader;
+		TextureShader* mTextureShader;
+		TerrainShader* mTerrainShader;
+
+	};
+}
+
 #endif // !_SHADER_MANAGER_
 

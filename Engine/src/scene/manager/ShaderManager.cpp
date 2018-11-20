@@ -1,5 +1,7 @@
 #include "ShaderManager.h"
 
+using namespace XEngine;
+
 bool ShaderManager::Init(ID3D11Device *device, HWND hWnd)
 {
 	mColorShader = new ColorShader;

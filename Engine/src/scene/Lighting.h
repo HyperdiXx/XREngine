@@ -11,8 +11,9 @@ using namespace DirectX;
 
 namespace XEngine
 {
-	struct Light
+	class XENGINE_API Light
 	{
+	public:
 		Light();
 		~Light();
 
@@ -24,9 +25,9 @@ namespace XEngine
 		XMFLOAT4& GetDiffuseColor();
 		XMFLOAT3& GetDirection();
 
-		XMFLOAT4 AbientColor;
-		XMFLOAT4 DiffColor;
-		XMFLOAT3 Direction;
+		DirectX::XMFLOAT4 AbientColor;
+		DirectX::XMFLOAT4 DiffColor;
+		DirectX::XMFLOAT3 Direction;
 	};
 }
 #endif // !LIGHT_CLASS

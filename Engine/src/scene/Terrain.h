@@ -18,8 +18,9 @@ using namespace DirectX;
 
 namespace XEngine
 {
-	struct XENGINE_API Terrain
+	class XENGINE_API Terrain
 	{
+	private:
 		struct Vertex
 		{
 			XMFLOAT3 pos;
@@ -35,7 +36,7 @@ namespace XEngine
 			float x, y, z;
 			//float tu, tv;
 		};
-
+	public:
 		Terrain();
 		~Terrain();
 

@@ -10,8 +10,9 @@
 
 namespace XEngine
 {
-	struct XENGINE_API TextureManager
+	class XENGINE_API TextureManager
 	{
+	public:
 		TextureManager();
 		~TextureManager();
 
@@ -23,6 +24,7 @@ namespace XEngine
 
 		ID3D11ShaderResourceView* getTexture(int);
 
+	private:
 		int mCount;
 		Texture* mTexture;
 	};

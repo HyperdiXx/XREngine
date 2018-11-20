@@ -13,38 +13,42 @@
 
 using namespace DirectX;
 
-
-struct XENGINE_API TextShader
+namespace XEngine
 {
-	struct Matrix
+	class XENGINE_API TextShader
 	{
-		XMMATRIX world;
-		XMMATRIX view;
-		XMMATRIX proj;
+	private:
+		struct Matrix
+		{
+			XMMATRIX world;
+			XMMATRIX view;
+			XMMATRIX proj;
+		};
+		struct PixelI
+		{
+			XMFLOAT4 pixelColor;
+		};
+	public:
+		TextShader();
+		~TextShader();
+
+		bool Init(ID3D11Device*, HWND);
+		bool Render(ID3D11DeviceContext*, int, XMMATRIX&, XMMATRIX&, XMMATRIX&, ID3D11ShaderResourceView*, XMFLOAT4);
+		void Release();
+
+		bool InitShader(ID3D11Device*, HWND, LPCWSTR, LPCWSTR);
+		bool ShaderPass(ID3D11DeviceContext*, XMMATRIX&, XMMATRIX&, XMMATRIX&, ID3D11ShaderResourceView*, XMFLOAT4);
+		void RenderShader(ID3D11DeviceContext*, int);
+		void ReleaseShader();
+	private:
+		ID3D11VertexShader * mVertexShader;
+		ID3D11PixelShader* mPixelShader;
+		ID3D11InputLayout* mLayout;
+		ID3D11Buffer* mMatrixBuffer;
+		ID3D11SamplerState* mSampleState;
+		ID3D11Buffer* mPixelBuffer;
 	};
-	struct PixelI
-	{
-		XMFLOAT4 pixelColor;
-	};
 
-	TextShader();
-	~TextShader();
-
-	bool Init(ID3D11Device*, HWND);
-	bool Render(ID3D11DeviceContext*, int, XMMATRIX&, XMMATRIX&, XMMATRIX&, ID3D11ShaderResourceView*, XMFLOAT4);
-	void Release();
-	
-	bool InitShader(ID3D11Device*, HWND, LPCWSTR, LPCWSTR);
-	bool ShaderPass(ID3D11DeviceContext*, XMMATRIX&, XMMATRIX&, XMMATRIX&, ID3D11ShaderResourceView*, XMFLOAT4);
-	void RenderShader(ID3D11DeviceContext*, int);
-	void ReleaseShader();
-
-	ID3D11VertexShader * mVertexShader;
-	ID3D11PixelShader* mPixelShader;
-	ID3D11InputLayout* mLayout;
-	ID3D11Buffer* mMatrixBuffer;
-	ID3D11SamplerState* mSampleState;
-	ID3D11Buffer* mPixelBuffer;
-};
+}
 #endif // !_TEXT_SHADER_H
 

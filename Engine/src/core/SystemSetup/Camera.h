@@ -12,8 +12,9 @@ using namespace DirectX;
 
 namespace XEngine
 {
-	struct XENGINE_API Camera
+	class XENGINE_API Camera
 	{
+	public:
 		Camera();
 		~Camera();
 
@@ -28,10 +29,10 @@ namespace XEngine
 
 		void RenderBaseViewMatrix();
 		void GetBaseViewMatrix(XMMATRIX&);
-
+	private:
 		float mPosX, mPosY, mPosZ;
 		float mRotX, mRotY, mRotZ;
-		XMMATRIX mViewMatrix, mBaseViewMatrix;
+		DirectX::XMMATRIX mViewMatrix, mBaseViewMatrix;
 	};
 }
 

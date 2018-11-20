@@ -7,10 +7,11 @@
 #include "../../Core.h"
 #include <math.h>
 
-namespace XEngine {
-	struct XENGINE_API Controller
+namespace XEngine 
+{
+	class XENGINE_API Controller
 	{
-
+	public:
 		Controller();
 		~Controller();
 
@@ -31,6 +32,7 @@ namespace XEngine {
 		void LookUpward(bool);
 		void LookDownward(bool);
 
+	private:
 		float mPosX, mPosY, mPosZ;
 		float mRotX, mRotY, mRotZ;
 

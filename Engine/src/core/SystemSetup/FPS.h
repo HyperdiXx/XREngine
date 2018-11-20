@@ -11,14 +11,16 @@
 
 namespace XEngine
 {
-	struct XENGINE_API FpsStat
+	class XENGINE_API FpsStat
 	{
+	public:
 		FpsStat();
 		~FpsStat();
-
 		void Initialize();
 		void Update();
 		int GetFps();
+
+	private:
 
 		int32 mFps, mCount;
 		unsigned long mStartTime;

@@ -14,10 +14,13 @@
 
 #include "AppAbst.h"
 
-	struct XENGINE_API SetupCom
+namespace XEngine
+{
+	class XENGINE_API SetupComponent
 	{
-		SetupCom();
-		~SetupCom();
+	public:
+		SetupComponent();
+		~SetupComponent();
 
 		bool Init();
 		void Start();
@@ -38,6 +41,8 @@
 
 	static LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
-	static SetupCom* AppNew = NULL;
+	static SetupComponent* AppNew = NULL;
+}
+
 #endif // !_SETUP_
 

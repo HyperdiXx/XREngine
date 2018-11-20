@@ -75,6 +75,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\App.h" />
     <ClInclude Include="src\Core.h" />
     <ClInclude Include="src\core\Allocators\Allocator.h" />
     <ClInclude Include="src\core\Allocators\LinearAllocator.h" />
@@ -111,6 +112,7 @@
     <ClInclude Include="src\XEngine.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\core\Allocators\Allocactor.cpp" />
     <ClCompile Include="src\core\Allocators\LinearAllocator.cpp" />
     <ClCompile Include="src\core\GraphicsDevice\d3dclass.cpp" />

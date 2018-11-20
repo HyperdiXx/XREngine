@@ -17,13 +17,14 @@ using namespace DirectX;
 
 namespace XEngine
 {
-	struct XENGINE_API TextureShader
+	class XENGINE_API TextureShader
 	{
+	private:
 		struct Matrix
 		{
 			XMMATRIX world, view, proj;
 		};
-
+	public:
 		TextureShader();
 		~TextureShader();
 
@@ -37,7 +38,7 @@ namespace XEngine
 		bool ShaderPass(ID3D11DeviceContext*, XMMATRIX&, XMMATRIX&, XMMATRIX&, ID3D11ShaderResourceView*);
 		void RenderShader(ID3D11DeviceContext*, int);
 
-
+	private:
 		ID3D11VertexShader* mVertexShader;
 		ID3D11PixelShader* mPixelShader;
 		ID3D11Buffer* mMatrixBuffer;

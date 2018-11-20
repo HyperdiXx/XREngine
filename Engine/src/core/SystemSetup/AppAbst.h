@@ -4,8 +4,8 @@
 #define _APP_APST_
 
 const bool VSYNC_ENABLED = true;
-const float SCREEN_DEPTH = 1000.0f;
-const float SCREEN_NEAR = 0.1f;
+const float FAR_PLANE = 1000.0f;
+const float NEAR_PLANE = 0.1f;
 
 #include "../pch/TypesSetup.h"
 #include "Timer.h"
@@ -17,22 +17,28 @@ const float SCREEN_NEAR = 0.1f;
 #include "../../scene/manager/TextureManager.h"
 #include "../../Core.h"
 
-struct XENGINE_API AppAbstraction
+namespace XEngine
 {
-	AppAbstraction();
-	~AppAbstraction();
+	class XENGINE_API AppAbstraction
+	{
+	public:
+		AppAbstraction();
+		~AppAbstraction();
 
-	bool Init(HINSTANCE, HWND, int32, int32);
-	bool Update();
-	bool Release();
+		bool Init(HINSTANCE, HWND, int32, int32);
+		bool Update();
+		bool Release();
+	private:
+		Input * mInput;
+		RendererComponent* mRender;
+		FpsStat* mFPS;
+		GameTimer* mTimer;
+		Scene* mScene;
+		ShaderManager* shM;
+		TextureManager* textM;
+	};
 
-	Input* mInput;
-	D3DClass* mRender;
-	FpsStat* mFPS;
-	GameTimer* mTimer;
-	Scene* mScene;
-	ShaderManager* shM;
-	TextureManager* textM;
-};
+}
+
 #endif // !_APP_ABST_
 

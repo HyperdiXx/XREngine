@@ -1,5 +1,7 @@
 #include "TextShader.h"
 
+using namespace XEngine;
+
 TextShader::TextShader()
 {
 }

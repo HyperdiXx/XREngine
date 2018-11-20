@@ -1,7 +1,8 @@
 #include "d3dclass.h"
 
+using namespace XEngine;
 
-D3DClass::D3DClass()
+RendererComponent::RendererComponent()
 {
 	m_swapChain = 0;
 	m_device = 0;
@@ -20,17 +21,17 @@ D3DClass::D3DClass()
 }
 
 
-D3DClass::D3DClass(const D3DClass& other)
+RendererComponent::RendererComponent(const RendererComponent& other)
 {
 }
 
 
-D3DClass::~D3DClass()
+RendererComponent::~RendererComponent()
 {
 }
 
 
-bool D3DClass::Initialize(int screenWidth, int screenHeight, bool vsync, HWND hwnd, bool fullscreen, float screenDepth, float screenNear)
+bool RendererComponent::Initialize(int screenWidth, int screenHeight, bool vsync, HWND hwnd, bool fullscreen, float screenDepth, float screenNear)
 {
 	HRESULT result;
 	IDXGIFactory* factory;
@@ -459,7 +460,7 @@ bool D3DClass::Initialize(int screenWidth, int screenHeight, bool vsync, HWND hw
 }
 
 
-void D3DClass::Shutdown()
+void RendererComponent::Shutdown()
 {
 	// Before shutting down set to windowed mode or when you release the swap chain it will throw an exception.
 	if (m_swapChain)
@@ -555,7 +556,7 @@ void D3DClass::Shutdown()
 }
 
 
-void D3DClass::BeginScene(float red, float green, float blue, float alpha)
+void RendererComponent::BeginScene(float red, float green, float blue, float alpha)
 {
 	float color[4];
 
@@ -576,7 +577,7 @@ void D3DClass::BeginScene(float red, float green, float blue, float alpha)
 }
 
 
-void D3DClass::EndScene()
+void RendererComponent::EndScene()
 {
 	if (mVsync_enabled)
 	{
@@ -591,39 +592,39 @@ void D3DClass::EndScene()
 }
 
 
-ID3D11Device* D3DClass::GetDevice()
+ID3D11Device* RendererComponent::GetDevice()
 {
 	return m_device;
 }
 
 
-ID3D11DeviceContext* D3DClass::GetDeviceContext()
+ID3D11DeviceContext* RendererComponent::GetDeviceContext()
 {
 	return m_deviceContext;
 }
 
 
-void D3DClass::GetProjectionMatrix(XMMATRIX& projectionMatrix)
+void RendererComponent::GetProjectionMatrix(XMMATRIX& projectionMatrix)
 {
 	projectionMatrix = m_projectionMatrix;
 	return;
 }
 
 
-void D3DClass::GetWorldMatrix(XMMATRIX& worldMatrix)
+void RendererComponent::GetWorldMatrix(XMMATRIX& worldMatrix)
 {
 	worldMatrix = m_worldMatrix;
 	return;
 }
 
 
-void D3DClass::GetOrthoMatrix(XMMATRIX& orthoMatrix)
+void RendererComponent::GetOrthoMatrix(XMMATRIX& orthoMatrix)
 {
 	orthoMatrix = m_orthoMatrix;
 	return;
 }
 
-void D3DClass::GetVideoCard(char *name, int &memory)
+void RendererComponent::GetVideoCard(char *name, int &memory)
 {
 	strcpy_s(name, 256, mVideoCardDescription);
 	memory = mVideoCardMemory;
@@ -638,21 +639,21 @@ void D3DClass::GetVideoCard(char *name, int &memory)
 }*/
 
 
-void D3DClass::TurnZBufferOn()
+void RendererComponent::TurnZBufferOn()
 {
 	m_deviceContext->OMSetDepthStencilState(m_depthStencilState, 1);
 	return;
 }
 
 
-void D3DClass::TurnZBufferOff()
+void RendererComponent::TurnZBufferOff()
 {
 	m_deviceContext->OMSetDepthStencilState(m_depthDisabledStencilState, 1);
 	return;
 }
 
 
-void D3DClass::EnableAlphaBlending()
+void RendererComponent::EnableAlphaBlending()
 {
 	float blendFactor[4];
 
@@ -670,7 +671,7 @@ void D3DClass::EnableAlphaBlending()
 }
 
 
-void D3DClass::DisableAlphaBlending()
+void RendererComponent::DisableAlphaBlending()
 {
 	float blendFactor[4];
 
@@ -688,7 +689,7 @@ void D3DClass::DisableAlphaBlending()
 }
 
 
-void D3DClass::TurnOnCulling()
+void RendererComponent::TurnOnCulling()
 {
 	// Set the culling rasterizer state.
 	m_deviceContext->RSSetState(m_rasterState);
@@ -697,7 +698,7 @@ void D3DClass::TurnOnCulling()
 }
 
 
-void D3DClass::TurnOffCulling()
+void RendererComponent::TurnOffCulling()
 {
 	// Set the no back face culling rasterizer state.
 	m_deviceContext->RSSetState(m_rasterStateNoCulling);
@@ -706,7 +707,7 @@ void D3DClass::TurnOffCulling()
 }
 
 
-void D3DClass::EnableAlphaToCoverageBlending()
+void RendererComponent::EnableAlphaToCoverageBlending()
 {
 	float blendFactor[4];
 
@@ -724,7 +725,7 @@ void D3DClass::EnableAlphaToCoverageBlending()
 }
 
 
-void D3DClass::EnableWireframe()
+void RendererComponent::EnableWireframe()
 {
 	// Set the wire frame rasterizer state.
 	m_deviceContext->RSSetState(m_rasterStateWireframe);
@@ -733,7 +734,7 @@ void D3DClass::EnableWireframe()
 }
 
 
-void D3DClass::DisableWireframe()
+void RendererComponent::DisableWireframe()
 {
 	// Set the solid fill rasterizer state.
 	m_deviceContext->RSSetState(m_rasterState);
